@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 
-const TaskItems = ({ item, eliminar, id, completado }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const [check, setCheck] = useState(false);
+const TaskItems = ({ item, eliminar, id, completado, enterEditMode }) => {
+  console.log("item", completado);
+  const [check, setCheck] = useState(item.completada);
 
   const handleCheck = () => {
     completado(id);
-    setCheck(true);
+    setCheck(!check);
   };
   return (
     <div className="flex items-center justify-between p-4">
-      <h2 className="pl-3">{item}</h2>
+      <h2 className="pl-3">{item.nombreTarea}</h2>
       <p>{!check ? "No completada" : "Completada"}</p>
 
       <img
@@ -28,6 +25,7 @@ const TaskItems = ({ item, eliminar, id, completado }) => {
         alt="icon eliminar"
         onClick={() => eliminar(id)}
       />
+      <button onClick={() => enterEditMode(item)}>Editar</button>
     </div>
   );
 };
