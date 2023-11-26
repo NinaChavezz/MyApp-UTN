@@ -3,14 +3,14 @@ import React from "react";
 import TaskItems from "./TaskItems";
 
 const TaskList = ({
-  nombre,
+  tasks,
   eliminar,
   completado,
   enterEditMode,
   searchWord,
 }) => {
-  console.log(nombre);
-  const filteredTasks = nombre.filter((task) =>
+  console.log(tasks);
+  const filteredTasks = tasks.filter((task) =>
     task.nombreTarea.toLowerCase().includes(searchWord.toLowerCase())
   );
   return (

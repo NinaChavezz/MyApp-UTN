@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TaskForm = ({ nombre, setNombre }) => {
+const TaskForm = ({ tasks, setTasks }) => {
   const [nombreTarea, setNombreTarea] = useState([]);
 
   const generarId = () => {
@@ -16,8 +16,8 @@ const TaskForm = ({ nombre, setNombre }) => {
       id: generarId(),
       completada: false,
     };
-    console.log(nombre);
-    setNombre([...nombre, objetoTarea]);
+    console.log(tasks);
+    setTasks([...tasks, objetoTarea]);
     e.target.reset();
   };
 

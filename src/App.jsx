@@ -5,27 +5,27 @@ import TaskList from "./Componentes/TaskList";
 import EditForm from "./Componentes/EditForm";
 
 function App() {
-  const [nombre, setNombre] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [editTask, setEditTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
   const [searchWord, setSearchWord] = useState("");
   useEffect(() => {
     const nombreLocalStorage = JSON.parse(localStorage.getItem("nombre"));
-    nombreLocalStorage?.length > 0 && setNombre(nombreLocalStorage);
+    nombreLocalStorage?.length > 0 && setTasks(nombreLocalStorage);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("nombre", JSON.stringify(nombre));
-  }, [nombre]);
+    localStorage.setItem("nombre", JSON.stringify(tasks));
+  }, [tasks]);
 
   const eliminar = (id) => {
-    const tarea = nombre.filter((item) => item.id !== id);
-    setNombre(tarea);
+    const tarea = tasks.filter((item) => item.id !== id);
+    setTasks(tarea);
   };
 
   const completado = (id) => {
-    setNombre((prevState) =>
+    setTasks((prevState) =>
       prevState.map((t) =>
         t.id === id ? { ...t, completada: !t.completada } : t
       )
@@ -34,7 +34,7 @@ function App() {
 
   const updateTask = (task) => {
     console.log("Updating task:", task);
-    setNombre((prevState) =>
+    setTasks((prevState) =>
       prevState.map((t) =>
         t.id === task.id ? { ...t, nombreTarea: task.nombreTarea } : t
       )
@@ -68,9 +68,9 @@ function App() {
               setSearchWord(e.target.value);
             }}
           />
-          <TaskForm nombre={nombre} setNombre={setNombre} />
+          <TaskForm tasks={tasks} setTasks={setTasks} />
           <TaskList
-            nombre={nombre}
+            tasks={tasks}
             eliminar={eliminar}
             completado={completado}
             enterEditMode={enterEditMode}
