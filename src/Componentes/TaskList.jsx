@@ -2,11 +2,20 @@ import TaskForm from "./TaskForm";
 import React from "react";
 import TaskItems from "./TaskItems";
 
-const TaskList = ({ nombre, eliminar, completado, enterEditMode }) => {
+const TaskList = ({
+  nombre,
+  eliminar,
+  completado,
+  enterEditMode,
+  searchWord,
+}) => {
   console.log(nombre);
+  const filteredTasks = nombre.filter((task) =>
+    task.nombreTarea.toLowerCase().includes(searchWord.toLowerCase())
+  );
   return (
     <div className="flex flex-col mt-7 rounded-lg overflow-hidden shadow-xl">
-      {nombre.map((item) => (
+      {filteredTasks.map((item) => (
         <TaskItems
           item={item}
           eliminar={eliminar}

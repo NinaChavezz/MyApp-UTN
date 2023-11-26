@@ -9,6 +9,7 @@ function App() {
   const [editTask, setEditTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
+  const [searchWord, setSearchWord] = useState("");
   useEffect(() => {
     const nombreLocalStorage = JSON.parse(localStorage.getItem("nombre"));
     nombreLocalStorage?.length > 0 && setNombre(nombreLocalStorage);
@@ -56,12 +57,24 @@ function App() {
     <div className=" bg-slate-800 min-h-screen h-full text-blue-300 flex items-center justify-center py-20 px-5">
       <div className="container flex flex-col max-w-xl">
         <>
+          <h1 className="bg-slate-900 h-full text-cyan-200 flex items-center justify-center rounded-xl py-5 px-5">
+            Lista de Tareas
+          </h1>
+          <input
+            className="border-2 p-3 m-2 w-[98%] placeholder-gray-400"
+            type="text"
+            placeholder="Buscar tarea..."
+            onChange={(e) => {
+              setSearchWord(e.target.value);
+            }}
+          />
           <TaskForm nombre={nombre} setNombre={setNombre} />
           <TaskList
             nombre={nombre}
             eliminar={eliminar}
             completado={completado}
             enterEditMode={enterEditMode}
+            searchWord={searchWord}
           />
         </>
       </div>

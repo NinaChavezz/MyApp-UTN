@@ -23,9 +23,6 @@ const TaskForm = ({ nombre, setNombre }) => {
 
   return (
     <>
-      <h1 className="bg-slate-900 h-full text-cyan-200 flex items-center justify-center rounded-xl py-5 px-5">
-        Lista de Tareas
-      </h1>
       <div className="mt-6 relative">
         <form onSubmit={handleSubmit}>
           <input
