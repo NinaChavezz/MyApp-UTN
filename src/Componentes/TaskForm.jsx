@@ -18,6 +18,7 @@ const TaskForm = ({ nombre, setNombre }) => {
     };
     console.log(nombre);
     setNombre([...nombre, objetoTarea]);
+    e.target.reset();
   };
 
   return (
@@ -33,7 +34,7 @@ const TaskForm = ({ nombre, setNombre }) => {
             placeholder="Ingrese una nueva tarea"
             onChange={(e) => setNombreTarea(e.target.value)}
           />
-          <button onClick={handleSubmit} type="text" className="">
+          <button type="submit" className="">
             Agregar
           </button>
         </form>
