@@ -25,7 +25,7 @@ const TaskForm = ({ tasks, setTasks }) => {
   return (
     <>
       <div className="mt-6 relative">
-        <form onSubmit={handleSubmit}>
+        <form className="flex gap-2" onSubmit={handleSubmit}>
           <input
             type="text"
             className="focus:shadow-lg focus: shadow-blue-300 pl-12 w-full py-4 bg-slate-700 rounded-xl outline-none"
