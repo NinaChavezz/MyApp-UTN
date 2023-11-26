@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PlusCircleIcon } from "@heroicons/react/24/outline";
 
 const TaskForm = ({ tasks, setTasks }) => {
   const [nombreTarea, setNombreTarea] = useState([]);
@@ -31,8 +32,8 @@ const TaskForm = ({ tasks, setTasks }) => {
             placeholder="Ingrese una nueva tarea"
             onChange={(e) => setNombreTarea(e.target.value)}
           />
-          <button type="submit" className="">
-            Agregar
+          <button type="submit">
+            <PlusCircleIcon className="h-8 w-8 text-white" />
           </button>
         </form>
       </div>
