@@ -25,18 +25,19 @@ function App() {
   };
 
   const completado = (id) => {
-    setTasks((prevState) =>
-      prevState.map((t) =>
-        t.id === id ? { ...t, completada: !t.completada } : t
+    setTasks((tasks) =>
+      tasks.map((task) =>
+        task.id === id ? { ...task, completada: !task.completada } : task
       )
     );
   };
 
-  const updateTask = (task) => {
-    console.log("Updating task:", task);
-    setTasks((prevState) =>
-      prevState.map((t) =>
-        t.id === task.id ? { ...t, nombreTarea: task.nombreTarea } : t
+  const updateTask = (updatedTask) => {
+    setTasks((tasks) =>
+      tasks.map((task) =>
+        task.id === updatedTask.id
+          ? { ...task, nombreTarea: updatedTask.nombreTarea }
+          : task
       )
     );
     closeEditMode();
