@@ -25,7 +25,12 @@ const TaskItems = ({ item, eliminar, id, completado, enterEditMode }) => {
         alt="icon eliminar"
         onClick={() => eliminar(id)}
       />
-      <button onClick={() => enterEditMode(item)}>Editar</button>
+      <img
+        className="h-6 w-6 cursor-pointer transition-all duration-200 ease-in"
+        src="/icon-editar.svg"
+        alt="icon editar"
+        onClick={() => enterEditMode(item)}
+      />
     </div>
   );
 };
