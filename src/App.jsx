@@ -83,9 +83,7 @@ function App() {
         <>
           <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
             <div className="relative w-auto max-w-3xl mx-auto my-6">
-              {/* Contenido del modal */}
-              <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
-                {/* Encabezado del modal */}
+              <div className="relative flex flex-col w-full bg-slate-600 border-0 rounded-lg shadow-lg outline-none focus:outline-none m-8">
                 <div className="flex items-baseline justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                   <h4 className="text-xl font-semibold">Modificando nombre</h4>
                   <button
@@ -97,9 +95,8 @@ function App() {
                     </span>
                   </button>
                 </div>
-                {/* Cuerpo del modal */}
+
                 <div className="relative p-6 flex-auto">
-                  {/* Contenido del formulario */}
                   <EditForm
                     editTask={editTask}
                     updateTask={updateTask}

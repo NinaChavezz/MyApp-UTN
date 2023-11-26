@@ -33,12 +33,17 @@ const EditForm = ({ editTask, updateTask, closeEditMode }) => {
           <input
             id="editTask"
             type="text"
+            size={50}
             value={updateTaskName}
             className="focus:shadow-lg focus: shadow-blue-300 pl-12 w-full py-4 bg-slate-700 rounded-xl outline-none"
             placeholder="Ingrese una nueva tarea"
             onInput={(e) => setUpdateTaskName(e.target.value)}
           />
-          <button onClick={handleSubmit} type="text" className="">
+          <button
+            onClick={handleSubmit}
+            type="text"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center mt-4"
+          >
             Confirmar
           </button>
         </form>
