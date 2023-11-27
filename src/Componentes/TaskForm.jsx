@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 
 const TaskForm = ({ tasks, setTasks }) => {
@@ -12,14 +13,21 @@ const TaskForm = ({ tasks, setTasks }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const objetoTarea = {
-      nombreTarea,
-      id: generarId(),
-      completada: false,
-    };
-    console.log(tasks);
-    setTasks([...tasks, objetoTarea]);
-    e.target.reset();
+    if (nombreTarea == "") {
+      console.log("Esta vacio");
+      toast.error("No podes agregar una tarea vacía");
+      return;
+    } else {
+      const objetoTarea = {
+        nombreTarea,
+        id: generarId(),
+        completada: false,
+      };
+      console.log(tasks);
+      setTasks([...tasks, objetoTarea]);
+      e.target.reset();
+      toast.success("Tarea agregada correctamente");
+    }
   };
 
   return (
@@ -36,6 +44,7 @@ const TaskForm = ({ tasks, setTasks }) => {
             <PlusCircleIcon className="h-8 w-8 text-white" />
           </button>
         </form>
+        <Toaster />
       </div>
     </>
   );
