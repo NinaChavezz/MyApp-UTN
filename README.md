@@ -2,6 +2,8 @@
 
 Aplicación de gestión de tareas desarrollado en React.js como parte del proyecto integrador final a la segunda etapa de Desarrollador web en el marco de Argentina Programa 4.0 UTN.
 
+<img src="https://i.imgur.com/LZtOj0m.jpg" width="500" alt="Panel Administrativo">
+
 ### Integrantes del GRUPO M
 
 1. Ana Carolina Castro
