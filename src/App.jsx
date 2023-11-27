@@ -58,7 +58,7 @@ function App() {
     <div className=" bg-slate-800 min-h-screen h-full text-blue-300 flex items-center justify-center py-20 px-5">
       <div className="container flex flex-col max-w-xl">
         <>
-          <h1 className="bg-slate-900 h-full text-cyan-200 flex items-center justify-center rounded-xl py-5 px-5">
+          <h1 className="bg-slate-900 h-full text-cyan-700 flex items-center justify-center rounded-xl py-5 px-5">
             Lista de Tareas
           </h1>
           <input
